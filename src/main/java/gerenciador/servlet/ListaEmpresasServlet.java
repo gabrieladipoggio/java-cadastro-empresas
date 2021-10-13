@@ -1,4 +1,4 @@
-package gerenciador;
+package gerenciador.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,7 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/listaEmpresas")
+import gerenciador.modelo.Banco;
+import gerenciador.modelo.Empresa;
+
+// @WebServlet("/listaEmpresas")
 public class ListaEmpresasServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -25,7 +28,5 @@ public class ListaEmpresasServlet extends HttpServlet {
         
         RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");
         rd.forward(request, response);
-
-        
     }
 }

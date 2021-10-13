@@ -1,7 +1,6 @@
-package gerenciador;
+package gerenciador.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,7 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/novaEmpresa")
+import gerenciador.modelo.Banco;
+import gerenciador.modelo.Empresa;
+
+// @WebServlet("/novaEmpresa")
 public class NovaEmpresaServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -40,12 +42,12 @@ public class NovaEmpresaServlet extends HttpServlet {
         Banco banco = new Banco();
         banco.adiciona(empresa);
         
-        request.setAttribute("empresa", empresa.getNome());
-        response.sendRedirect("listaEmpresas");
+        //request.setAttribute("empresa", empresa.getNome());
+       // response.sendRedirect("listaEmpresas");
         
-        // RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
-        // request.setAttribute("empresa", empresa.getNome());
-        // rd.forward(request, response);
+        RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
+        request.setAttribute("empresa", empresa.getNome());
+        rd.forward(request, response);
 
     }
 }

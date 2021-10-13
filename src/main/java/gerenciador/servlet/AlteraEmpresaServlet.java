@@ -1,4 +1,4 @@
-package gerenciador;
+package gerenciador.servlet;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/alteraEmpresa")
+import gerenciador.modelo.Banco;
+import gerenciador.modelo.Empresa;
+
+// @WebServlet("/alteraEmpresa")
 public class AlteraEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
