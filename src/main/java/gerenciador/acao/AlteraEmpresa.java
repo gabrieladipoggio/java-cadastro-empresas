@@ -13,7 +13,7 @@ import gerenciador.modelo.Banco;
 import gerenciador.modelo.Empresa;
 
 public class AlteraEmpresa {
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("alterando empresa");
 
         String nomeEmpresa = request.getParameter("nome");
@@ -34,7 +34,7 @@ public class AlteraEmpresa {
         empresa.setNome(nomeEmpresa);
         empresa.setDataAbertura(dataAbertura);
 
-       response.sendRedirect("entrada?acao=ListaEmpresas");
+       return "redirect:entrada?acao=ListaEmpresas";
 	
 	}
 }
